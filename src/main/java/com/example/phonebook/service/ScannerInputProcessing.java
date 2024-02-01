@@ -4,7 +4,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class ScannerInputProcessing {
-  PhoneBook phoneBook = new PhoneBook();
+  private final PhoneBook phoneBook = new PhoneBook();
 
   public boolean proccess(Scanner scanner) {
     System.out.println("\nЧтобы увидеть всех абонентов книги, введите: list \nЧтобы увидеть конкретного абонента, введите его имя или номер \nЧтобы добавить абонента, введите: new \nЕсли хотите хакончить работу с приложением, введите: q");
@@ -20,8 +20,8 @@ public class ScannerInputProcessing {
     }
 
     if (phoneBook.isName(userInput)) {
-      if (phoneBook.getPhoneBook().containsKey(userInput)) {
-        System.out.println("Имя: " + userInput + "\nНомер: " + phoneBook.getPhoneBook().get(userInput));
+      if (phoneBook.getPhoneBookCatalog().containsKey(userInput)) {
+        System.out.println("Имя: " + userInput + "\nНомер: " + phoneBook.getPhoneBookCatalog().get(userInput));
       } else {
         System.out.println("В телефонной книге нет такого абонента. \n Хотите добавить его в книгу? y/n");
 
@@ -31,7 +31,7 @@ public class ScannerInputProcessing {
     }
 
     if (phoneBook.isPhoneNumber(userInput)) {
-        phoneBook.getPhoneBook().entrySet().stream()
+        phoneBook.getPhoneBookCatalog().entrySet().stream()
                                             .filter(obj -> obj.getValue().equals(userInput))
                                             .findFirst()
                                             .ifPresentOrElse(this::printIfNumberFound,
@@ -67,7 +67,7 @@ public class ScannerInputProcessing {
     System.out.println("Введите номер абонента");
     String number = getNumber(scanner);
 
-    phoneBook.addEntry(name, number, phoneBook.getPhoneBook());
+    phoneBook.addEntry(name, number, phoneBook.getPhoneBookCatalog());
     System.out.println("Абонент " + name + " " + number + " добавлен в телефонную книгу");
   }
 

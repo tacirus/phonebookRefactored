@@ -1,15 +1,17 @@
 package com.example.phonebook.service;
 
+import com.example.phonebook.util.PhoneBookCatalogInit;
+
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class PhoneBook {
 
-    private Map<String, String> phoneBook = Utils.getPhoneBook();
+    private final Map<String, String> phoneBookCatalog = PhoneBookCatalogInit.getPhoneBook();
 
     public void printList() {
-        for (Map.Entry<String, String> entry : this.phoneBook.entrySet()) {
+        for (Map.Entry<String, String> entry : this.phoneBookCatalog.entrySet()) {
             String contactName = entry.getKey();
             String contactNumber = entry.getValue();
             System.out.println("\nИмя: " + contactName + ", Номер телефона: " + contactNumber);
@@ -35,7 +37,7 @@ public class PhoneBook {
         phonebook.put(name, number);
     }
 
-    public Map<String, String> getPhoneBook() {
-        return this.phoneBook;
+    public Map<String, String> getPhoneBookCatalog() {
+        return this.phoneBookCatalog;
     }
 }

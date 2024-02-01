@@ -1,9 +1,9 @@
-package com.example.phonebook.service;
+package com.example.phonebook.util;
 
 import java.util.Map;
 import java.util.TreeMap;
 
-public class Utils {
+public class PhoneBookCatalogInit {
 
   private static Map<String, String> phoneBook = new TreeMap<>();
 
