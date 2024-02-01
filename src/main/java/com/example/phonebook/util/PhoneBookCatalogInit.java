@@ -16,5 +16,5 @@ public class PhoneBookCatalogInit {
     return phoneBook;
   }
 
-  private PhoneBookCatalogInit(){};
+  private PhoneBookCatalogInit(){}
 }
