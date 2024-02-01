@@ -10,14 +10,9 @@ public class PhoneBook {
 
     private final Map<String, String> phoneBookCatalog = PhoneBookCatalogInit.getPhoneBook();
 
-    public void printList() {
-        for (Map.Entry<String, String> entry : this.phoneBookCatalog.entrySet()) {
-            String contactName = entry.getKey();
-            String contactNumber = entry.getValue();
-            System.out.println("\nИмя: " + contactName + ", Номер телефона: " + contactNumber);
+    public void printList() { // the example how to do it using Stream API
+        this.phoneBookCatalog.forEach((key, value) -> System.out.println("\nИмя: " + key + ", Номер телефона: " + value));
         }
-
-    }
 
     public boolean isName(String userInput) {
         return userInput.matches("[a-zA-Zа-яА-Я]+");
