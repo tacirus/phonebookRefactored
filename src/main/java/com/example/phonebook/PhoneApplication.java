@@ -1,6 +1,5 @@
 package com.example.phonebook;
 
-import com.example.phonebook.service.PhoneBook;
 import com.example.phonebook.service.ScannerInputProcessing;
 
 import java.util.Scanner;
