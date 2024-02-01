@@ -5,7 +5,7 @@ import java.util.TreeMap;
 
 public class PhoneBookCatalogInit {
 
-  private static Map<String, String> phoneBook = new TreeMap<>();
+  private static final Map<String, String> phoneBook = new TreeMap<>();
 
   static {
     phoneBook.put("Жека", "89312802629");
@@ -15,4 +15,6 @@ public class PhoneBookCatalogInit {
   public static Map<String, String> getPhoneBook() {
     return phoneBook;
   }
+
+  private PhoneBookCatalogInit(){};
 }
