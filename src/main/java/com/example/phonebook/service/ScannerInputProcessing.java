@@ -33,9 +33,10 @@ public class ScannerInputProcessing {
     if (phoneBook.isPhoneNumber(userInput)) {
         phoneBook.getPhoneBook().entrySet().stream()
                                             .filter(obj -> obj.getValue().equals(userInput))
-                                            .findFirst().ifPresentOrElse(this::printIfNumberFound,
-                                                                            () -> {System.out.println("В телефонной книге нет абонента с таким номером. \n Хотите добавить его в книгу? y/n");
-                                                                                      addEntry(scanner);});
+                                            .findFirst()
+                                            .ifPresentOrElse(this::printIfNumberFound,
+                                                                  () -> {System.out.println("В телефонной книге нет абонента с таким номером. \n Хотите добавить его в книгу? y/n");
+                                                                            addEntry(scanner);});
     } else {
       System.out.println("Вы ввели номер в некорректном формате.");
     }
@@ -66,8 +67,8 @@ public class ScannerInputProcessing {
     System.out.println("Введите номер абонента");
     String number = getNumber(scanner);
 
-      phoneBook.addEntry(name, number, phoneBook.getPhoneBook());
-      System.out.println("Абонент " + name + " " + number + " добавлен в телефонную книгу");
+    phoneBook.addEntry(name, number, phoneBook.getPhoneBook());
+    System.out.println("Абонент " + name + " " + number + " добавлен в телефонную книгу");
   }
 
   private String getName(Scanner scanner) {
