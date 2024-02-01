@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class PhoneApplication {
   public static void main(String[] args) {
-    ScannerInputProcessing scanProccessing = new ScannerInputProcessing();
+    private final ScannerInputProcessing scanProccessing = new ScannerInputProcessing();
 
     try(Scanner scanner = new Scanner(System.in)) {
       boolean isNotFinished = true;
