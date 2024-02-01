@@ -7,7 +7,6 @@ import java.util.Scanner;
 
 public class PhoneApplication {
   public static void main(String[] args) {
-    PhoneBook phoneBookObj = new PhoneBook();
     ScannerInputProcessing scanProccessing = new ScannerInputProcessing();
 
     try(Scanner scanner = new Scanner(System.in)) {
